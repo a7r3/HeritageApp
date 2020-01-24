@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AccelerateInterpolator;
 
 import com.google.android.material.button.MaterialButton;
 
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 mainSet.applyTo(mainLayout);
             }
         });
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2, RecyclerView.VERTICAL, false));
 
         recyclerView.setAdapter(new RecyclerView.Adapter() {
 
@@ -63,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             @NonNull
             @Override
             public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                return new ViewHolder(LayoutInflater.from(MainActivity.this).inflate(R.layout.grid_item, null, false));
+                return new ViewHolder(LayoutInflater.from(MainActivity.this).inflate(R.layout.grid_item, parent, false));
             }
 
             @Override
@@ -76,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
                 return 10;
             }
         });
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 2, RecyclerView.VERTICAL, false));
 
     }
 }
