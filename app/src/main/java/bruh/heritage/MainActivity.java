@@ -19,6 +19,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AccelerateInterpolator;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     ConstraintSet loginSet, mainSet;
     ConstraintLayout mainLayout;
     RecyclerView recyclerView;
+    FloatingActionButton floatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,15 @@ public class MainActivity extends AppCompatActivity {
         mainSet = new ConstraintSet();
         mainSet.clone(this, R.layout.activity_main_alt);
         button = findViewById(R.id.get_started_button);
+
+        floatingActionButton = findViewById(R.id.view_cart_fab);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
