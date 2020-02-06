@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Cart"
+        android:textColor="#442c2e"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:id="@+id/cart_title"
+        android:padding="16dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/items_recycler"
+        app:layout_constraintTop_toBottomOf="@id/cart_title"
+        android:layout_width="0dp"
+        app:layout_constraintBottom_toTopOf="@id/checkout_button"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="@dimen/list_item_spacing_half"
+        android:paddingBottom="@dimen/list_item_spacing_half"
+        tools:context=".ItemListDialogFragment"
+        tools:listitem="@layout/fragment_item_list_dialog_item" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:id="@+id/checkout_button"
+        android:text="Checkout"
+        android:gravity="center"
+        android:textColor="#442c2e"
+        app:backgroundTint="@color/colorAccent"
+        app:icon="@drawable/ic_shopping_cart_black_24dp"
+        app:iconGravity="textStart"
+        app:cornerRadius="80dp"
+        app:iconPadding="16dp"
+        app:iconTint="#442c2e"
+        android:layout_margin="12dp"
+        app:rippleColor="#442c2e"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

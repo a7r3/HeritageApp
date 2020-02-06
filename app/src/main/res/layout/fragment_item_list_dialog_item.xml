@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+    android:layout_height="120dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_margin="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/item_image"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="12dp"
+        android:elevation="8dp"
+        app:layout_constraintDimensionRatio="1:1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/sampleitem" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Some Item"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:id="@+id/item_name"
+        app:layout_constraintTop_toTopOf="@id/item_image"
+        app:layout_constraintBottom_toBottomOf="@id/item_image"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@id/item_image"
+        android:textColor="#442c2e" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="x1"
+        app:layout_constraintStart_toEndOf="@id/item_name"
+        app:layout_constraintTop_toTopOf="@id/item_name"
+        android:layout_marginStart="8dp"
+        android:textSize="22sp"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\u20b9 3000"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="16dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/item_name"
+        android:textSize="22sp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
